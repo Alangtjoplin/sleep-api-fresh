@@ -69,17 +69,17 @@ print(f"✓ Test prediction: {test_pred:.3f} ({test_pred*100:.1f}%) - Actual: {a
 
 # Save model
 print("\nSaving model files...")
-with open('sleep_model.pkl', 'wb') as f:
+with open('sleep_model_v2.pkl', 'wb') as f:
     pickle.dump(model, f)
 
 scaler = StandardScaler()
 scaler.fit(X)
-with open('scaler.pkl', 'wb') as f:
+with open('scaler_v2.pkl', 'wb') as f:
     pickle.dump(scaler, f)
 
 import os
-print(f"✓ Model saved: sleep_model.pkl ({os.path.getsize('sleep_model.pkl'):,} bytes)")
-print(f"✓ Scaler saved: scaler.pkl ({os.path.getsize('scaler.pkl'):,} bytes)")
+print(f"✓ Model saved: sleep_model_v2.pkl ({os.path.getsize('sleep_model_v2.pkl'):,} bytes)")
+print(f"✓ Scaler saved: scaler_v2.pkl ({os.path.getsize('scaler_v2.pkl'):,} bytes)")
 
 print("\n" + "=" * 70)
 print("✅ MODEL TRAINING COMPLETE!")

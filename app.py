@@ -14,9 +14,9 @@ scaler = None
 def load_model():
     global model, scaler
     try:
-        with open('sleep_model.pkl', 'rb') as f:
+        with open('sleep_model_v2.pkl', 'rb') as f:
             model = pickle.load(f)
-        with open('scaler.pkl', 'rb') as f:
+        with open('scaler_v2.pkl', 'rb') as f:
             scaler = pickle.load(f)
         print("Model loaded successfully!")
         return True
