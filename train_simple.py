@@ -10,7 +10,7 @@ print("TRAINING SLEEP QUALITY MODEL (WITHOUT SLEEP STAGES)")
 print("=" * 70)
 
 print("\nLoading data...")
-df = pd.read_csv('sleep_clean_8features.csv')
+df = pd.read_csv('sleep_clean.csv')
 print(f"✓ Loaded {len(df)} rows")
 
 # ONLY USE FEATURES USERS CAN ACTUALLY PROVIDE
