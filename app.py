@@ -18,7 +18,7 @@ def load_model():
             model = pickle.load(f)
         with open('scaler_v2.pkl', 'rb') as f:
             scaler = pickle.load(f)
-        print("Model loaded successfully!")
+        print("✓ Model loaded successfully!")
         return True
     except Exception as e:
         print(f"Error loading model: {e}")
@@ -30,7 +30,7 @@ load_model()
 def home():
     return jsonify({
         'status': 'online',
-        'message': 'Sleep Quality Prediction API',
+        'message': 'Sleep Quality Prediction API v2.0',
         'model_loaded': model is not None
     })
 
@@ -49,12 +49,10 @@ def predict():
         if not data:
             return jsonify({'error': 'No data provided'}), 400
         
+        # ONLY 8 FEATURES - NO SLEEP STAGES!
         features = {
             'Age': float(data.get('age', 0)),
             'Sleep duration': float(data.get('sleep_duration', 0)),
-            'REM sleep percentage': float(data.get('rem_sleep_percentage', 0)),
-            'Deep sleep percentage': float(data.get('deep_sleep_percentage', 0)),
-            'Light sleep percentage': float(data.get('light_sleep_percentage', 0)),
             'Awakenings': int(data.get('awakenings', 0)),
             'Caffeine consumption': float(data.get('caffeine_consumption', 0)),
             'Alcohol consumption': float(data.get('alcohol_consumption', 0)),
